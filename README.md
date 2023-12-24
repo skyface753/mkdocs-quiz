@@ -19,7 +19,7 @@ quiz-end
 
 ## Screenshots
 
-<img src="assets/images/quiz.png" width="300rem">
+<img src="assets/images/quiz.png" width="400rem">
 
 ## Disable for a page
 
