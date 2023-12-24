@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name='mkdocs_quiz',
-    version='0.0.31',
+    version='0.0.32',
     packages=['mkdocs_quiz',],
     package_data={'mkdocs_quiz': ['css/*', 'js/*']},
     include_package_data=True,
