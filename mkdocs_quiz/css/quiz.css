@@ -12,9 +12,9 @@
 }
 
 form button {
-  background-color: #4caf50;
+  background-color: var(--md-primary-fg-color);
   border: none;
-  color: white;
+  color: var(--md-primary-bg-color);
   padding: 0.5rem 1rem;
   text-align: center;
   text-decoration: none;
