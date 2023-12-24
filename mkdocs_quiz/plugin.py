@@ -1,7 +1,6 @@
 from mkdocs.config.defaults import MkDocsConfig
 from mkdocs.plugins import BasePlugin
-from mkdocs import utils
-from mkdocs.structure.files import Files, File
+from mkdocs.structure.files import Files
 from mkdocs.structure.pages import Page
 from importlib import resources as impresources
 from . import css, js
@@ -29,7 +28,6 @@ class MkDocsQuizPlugin(BasePlugin):
         self.dirty = dirty
 
     def on_page_markdown(self, markdown, page, config, **kwargs):
-        utils.log.info("Page: {}".format(page.meta))
         if "quiz" in page.meta:
             if page.meta["quiz"] == "disable":
                 return markdown

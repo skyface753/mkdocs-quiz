@@ -2,8 +2,10 @@ from distutils.core import setup
 
 setup(
     name='mkdocs_quiz',
-    version='0.0.2',
+    version='0.0.31',
     packages=['mkdocs_quiz',],
+    package_data={'mkdocs_quiz': ['css/*', 'js/*']},
+    include_package_data=True,
     license='Apache License 2.0',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
