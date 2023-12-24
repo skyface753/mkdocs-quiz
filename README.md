@@ -17,6 +17,10 @@ quiz-end
 
 > **Warning** The quiz content needs to be valid **_HTML_**
 
+## Screenshots
+
+<img src="assets/images/quiz.png" width="300rem">
+
 ## Disable for a page
 
 ```markdown
