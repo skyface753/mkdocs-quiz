@@ -1,0 +1,12 @@
+site/
+*.egg-info/
+__pycache__
+*.pyc
+build/
+dist/
+.vscode/.ropeproject/
+.cache
+venv/
+docs/
+artifact.tar
+.mypy_cache/

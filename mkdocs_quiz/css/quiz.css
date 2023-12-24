@@ -1,0 +1,58 @@
+.quiz {
+  border: 1px solid black;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+/* Set margin-top of first quiz child */
+.quiz > *:first-child {
+  margin-top: 0;
+}
+.hidden {
+  display: none;
+}
+
+form button {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.8rem;
+}
+
+.wrong label {
+  color: red;
+}
+.correct label {
+  color: green;
+}
+
+fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+}
+fieldset input {
+  margin: 0 10px;
+}
+fieldset label {
+  margin: 0 10px;
+}
+
+label.correct {
+  color: green;
+}
+label.wrong {
+  color: red;
+}
+input[type='radio'].correct {
+  accent-color: green;
+}
+input[type='radio'].wrong {
+  accent-color: red;
+}
+.content {
+  margin: 10px;
+}
