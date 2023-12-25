@@ -3,18 +3,41 @@ document.querySelectorAll('.quiz').forEach((quiz) => {
   let fieldset = form.querySelector('fieldset');
   form.addEventListener('submit', (event) => {
     event.preventDefault();
-    let answer = form.querySelector('input[name="answer"]:checked');
-    if (answer) {
-      let correct = answer.hasAttribute('correct');
-      let section = quiz.querySelector('section');
-      if (correct) {
-        section.classList.remove('hidden');
-        resetFieldset(fieldset);
-        answer.parentElement.classList.add('correct');
-      } else {
-        section.classList.add('hidden');
-        resetFieldset(fieldset);
-        answer.parentElement.classList.add('wrong');
+    let selectedAnswers = form.querySelectorAll('input[name="answer"]:checked');
+    let correctAnswers = fieldset.querySelectorAll(
+      'input[name="answer"][correct]'
+    );
+    // Check if all correct answers are selected
+    let is_correct = selectedAnswers.length === correctAnswers.length;
+    for (let i = 0; i < selectedAnswers.length; i++) {
+      if (!selectedAnswers[i].hasAttribute('correct')) {
+        is_correct = false;
+        break;
+      }
+    }
+    let section = quiz.querySelector('section');
+    if (is_correct) {
+      section.classList.remove('hidden');
+      resetFieldset(fieldset);
+      // Mark all fields with colors
+      const allAnswers = fieldset.querySelectorAll('input[name="answer"]');
+      for (let i = 0; i < allAnswers.length; i++) {
+        if (allAnswers[i].hasAttribute('correct')) {
+          allAnswers[i].parentElement.classList.add('correct');
+        } else {
+          allAnswers[i].parentElement.classList.add('wrong');
+        }
+      }
+    } else {
+      section.classList.add('hidden');
+      resetFieldset(fieldset);
+      // Mark wrong fields with colors
+      for (let i = 0; i < selectedAnswers.length; i++) {
+        if (!selectedAnswers[i].hasAttribute('correct')) {
+          selectedAnswers[i].parentElement.classList.add('wrong');
+        } else {
+          selectedAnswers[i].parentElement.classList.add('correct');
+        }
       }
     }
   });
