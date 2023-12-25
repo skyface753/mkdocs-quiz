@@ -1,19 +1,21 @@
 # MkDocs Quiz Plugin
 
+## [Demo](https://skyface753.github.io/mkdocs-quiz/)
+
 ## Create your first quiz
 
 ```bash
-quiz-start
-quiz-question: Are you ready?
-quiz-answer-correct: <code>Yes!</code>
-quiz-answer: No!
-quiz-answer: Maybe!
-quiz-content:
+<?quiz?>
+question: Are you ready?
+answer-correct: Yes!
+answer: No!
+answer: Maybe!
+content:
 <h2>Provide some additional content</h2>
-quiz-end
+<?/quiz?>
 ```
 
-> **Info** The answers can styled with HTML (like `<code>Yes!</code>`)
+> **Info** The answers can get styled with HTML (like `<code>Yes!</code>`)
 
 > **Warning** The quiz content needs to be valid **_HTML_**
 
@@ -22,14 +24,14 @@ quiz-end
 You can also create a multiple choice quiz, by providing multiple answers as correct.
 
 ```bash
-quiz-start
-quiz-question: Are you ready?
-quiz-answer-correct: Yes!
-quiz-answer-correct: Maybe!
-quiz-answer: No!
-quiz-content:
-<h4>Great!</h4>
-quiz-end
+<?quiz?>
+question: Are you ready?
+answer-correct: Yes!
+answer: No!
+answer-correct: Maybe!
+content:
+<h2>Provide some additional content</h2>
+<?/quiz?>
 ```
 
 ## Screenshots
