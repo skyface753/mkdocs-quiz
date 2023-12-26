@@ -1,8 +1,25 @@
 # MkDocs Quiz Plugin
 
-## [Demo](https://skyface753.github.io/mkdocs-quiz/)
+## Installation
+
+Install the package with pip:
+
+```bash
+pip install mkdocs_quiz
+```
 
 ## Create your first quiz
+
+Add the following to your `mkdocs.yml`:
+
+```yaml
+plugins:
+  - mkdocs_quiz
+```
+
+### Single choice
+
+Now you can create your first quiz directly in markdown:
 
 ```bash
 <?quiz?>
@@ -19,7 +36,7 @@ content:
 
 > **Warning** The quiz content needs to be valid **_HTML_**
 
-## Multiple choice
+### Multiple choice
 
 You can also create a multiple choice quiz, by providing multiple answers as correct.
 
@@ -34,17 +51,23 @@ content:
 <?/quiz?>
 ```
 
+## [Demo](https://skyface753.github.io/mkdocs-quiz/)
+
 ## Screenshots
 
-### Quiz (single choice)
+The single choice quiz will get generated as a radio button group, while the multiple choice quiz will get generated as a checkbox group.
+
+### Single choice
 
 <img src="assets/images/quiz.png" width="400rem">
 
-### Quiz (multiple choice)
+### Multiple choice
 
 <img src="assets/images/quiz-multi.png" width="400rem">
 
 ## Disable for a page
+
+You can disable the quiz for a page by adding the following to the top (meta) of the page:
 
 ```markdown
 ---
