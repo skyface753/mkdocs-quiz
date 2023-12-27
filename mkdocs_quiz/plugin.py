@@ -87,3 +87,34 @@ class MkDocsQuizPlugin(BasePlugin):
 
         html = html + style + js
         return html
+
+
+# Test the plugin
+if __name__ == "__main__":
+    # Get the test_input.md
+    with open("mkdocs_quiz/test_input.md", "r") as f:
+        test_input = f.read()
+    # Generate the expected output
+    with open("mkdocs_quiz/test_output.md", "r") as f:
+        test_output = f.read()
+    # Create the plugin
+    plugin = MkDocsQuizPlugin()
+    # Create a dummy page
+    class DummyPage:
+        def __init__(self):
+            self.meta = {}
+    page = DummyPage()
+    # Create a dummy config
+    class DummyConfig:
+        def __init__(self):
+            self = None
+    config = DummyConfig()
+    # Create dummy files
+    class DummyFiles:
+        def __init__(self):
+            self = None
+    files = DummyFiles()
+    # Run the plugin
+    output = plugin.on_page_markdown(test_input, page, config, files=files)
+    # Compare the output
+    assert output == test_output
